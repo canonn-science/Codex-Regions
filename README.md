@@ -5,7 +5,11 @@ The javascript loads [RegionMap.svg](https://github.com/klightspeed/EliteDangero
 
 With the map loaded into memory, it then downloads a csv file of coordinates from the Canonn data dumps using the category and entryid parameters and displays the location of the entries as they are fetched so that the pages is rendered as data is loaded.
 
+Examples:
 
+* [Stratum Tectonicas - Green Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2420703&category=Biology)
+* [Tubus Conifer - Turquoise Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2430108&category=Biology)
+ 
 
 
 
