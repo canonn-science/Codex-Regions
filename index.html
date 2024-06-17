@@ -12,10 +12,18 @@
             border: 1px solid black;
             /* Add a border for better visibility */
         }
+
+        #tooltip {
+            background: cornsilk;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
     </style>
 </head>
 
 <body>
+    <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
     <div id="svg-container" style="width: 200px; height: 200px;"></div>
 
     <script src="manipulate-svg.js"></script>

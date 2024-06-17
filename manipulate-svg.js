@@ -45,7 +45,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
             // Split CSV text into lines
             const lines = csvText.trim().split('\n');
             const circleGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-            svgElement.prepend(circleGroup); // Add the group as the first child of the SVG
+            svgElement.append(circleGroup); // Add the group as the first child of the SVG
 
 
             // Process each line (assuming no header and x, y are in fields 2 and 3)
@@ -58,6 +58,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                     if (fields.length >= 3) {
                         const x = parseFloat(fields[1]);
                         const y = parseFloat(fields[3]);
+                        const title = fields[0]
 
 
 
@@ -66,7 +67,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                             ty = ((y + 24105) * 83 / 4096)
 
 
-                            addCircleToSVG(circleGroup, tx, 2048 - ty);
+                            addCircleToSVG(svgElement, circleGroup, tx, 2048 - ty, title);
                         }
                     }
                     index++;
@@ -81,13 +82,46 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
     }
 }
 
-function addCircleToSVG(svgElement, x, y) {
-    const newCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+function showTooltip(evt, text) {
+    let tooltip = document.getElementById("tooltip");
+    tooltip.innerHTML = text;
+    tooltip.style.display = "block";
+    tooltip.style.left = evt.pageX + 10 + 'px';
+    tooltip.style.top = evt.pageY + 10 + 'px';
+}
+
+function hideTooltip() {
+    var tooltip = document.getElementById("tooltip");
+    tooltip.style.display = "none";
+}
+
+
+function addCircleToSVG(parent, svgElement, x, y, hoverText) {
+    const svgns = 'http://www.w3.org/2000/svg';
+
+    // Create circle element
+    const newCircle = document.createElementNS(svgns, 'circle');
     newCircle.setAttribute('cx', x);
     newCircle.setAttribute('cy', y);
-    newCircle.setAttribute('r', '2'); // radius of 5 units
+    newCircle.setAttribute('r', '3'); // Adjust radius as needed
     newCircle.setAttribute('fill', 'red');
+    newCircle.setAttribute('fill-opacity', '0.5'); // 50% transparency
 
+    // Append circle element to SVG
     svgElement.appendChild(newCircle);
-    console.log(`Added circle at (${x}, ${y})`);
+
+    // Event listener on SVG element to handle mouseover and mouseout events
+    parent.addEventListener('mouseover', function (event) {
+        if (event.target === newCircle) {
+            showTooltip(event, hoverText);
+        }
+    });
+
+    parent.addEventListener('mouseout', function (event) {
+        if (event.target === newCircle) {
+            hideTooltip();
+        }
+    });
+
+    //console.log(`Added circle at (${x}, ${y}) with hover text "${hoverText}"`);
 }
