@@ -59,8 +59,15 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                         const x = parseFloat(fields[1]);
                         const y = parseFloat(fields[3]);
                         const title = fields[0]
+                        const cRegion = fields[6]
+                        const bRegion = fields[7]
 
-
+                        var regionElement = svgElement.getElementById("Region_" + cRegion.padStart(2, '0'));
+                        // Check if the element exists
+                        if (regionElement) {
+                            // Set the fill-opacity to 50%
+                            regionElement.style.fillOpacity = "0.5";
+                        }
 
                         if (!isNaN(x) && !isNaN(y)) {
                             tx = ((x + 49985) * 83 / 4096)
