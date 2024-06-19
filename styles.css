@@ -2,6 +2,36 @@ body {
     background-color: #4f5d64;
 }
 
+
+header {
+    background-color: #263238;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    /* Adjust the height of the logo as needed */
+    margin-right: 20px;
+}
+
+.title {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 400;
+    color: #ef7b04;
+
+    /* Adjust the font size as needed */
+    margin: 0;
+}
+
+
 svg {
     display: block;
     /* Ensure SVG fills its container */
