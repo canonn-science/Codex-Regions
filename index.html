@@ -5,26 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codex Regions</title>
-    <style>
-        svg {
-            display: block;
-            /* Ensure SVG fills its container */
-            border: 1px solid black;
-            /* Add a border for better visibility */
-        }
-
-        #tooltip {
-            background: cornsilk;
-            border: 1px solid black;
-            border-radius: 5px;
-            padding: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
-    <div id="svg-container" style="width: 200px; height: 200px;"></div>
+
+    <div id="container">
+        <div id="svg-container"></div>
+        <div id="text-panel">
+            <p>Your text goes here. This is a panel next to the SVG.</p>
+            <!-- More text or elements can go here -->
+        </div>
+    </div>
 
     <script src="manipulate-svg.js"></script>
 </body>

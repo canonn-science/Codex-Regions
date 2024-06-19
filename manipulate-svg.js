@@ -45,12 +45,13 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
             // Split CSV text into lines
             const lines = csvText.trim().split('\n');
             const circleGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            var regionText = svgElement.getElementById("Region_text_01");
             svgElement.append(circleGroup); // Add the group as the first child of the SVG
 
 
             // Process each line (assuming no header and x, y are in fields 2 and 3)
             let index = 0;
-            const batchSize = 50; // Number of circles to add in each batch
+            const batchSize = 1000; // Number of circles to add in each batch
             const intervalId = setInterval(() => {
                 for (let i = 0; i < batchSize && index < lines.length; i++) {
                     const line = lines[index];
@@ -83,6 +84,18 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                     clearInterval(intervalId); // Stop interval when all circles are added
                 }
             }, 0); // Interval of 0ms (no delay)
+            var paths = svgElement.querySelectorAll('.borderlines');
+            paths.forEach(function (path) {
+                svgElement.appendChild(path); // Move each text element to the end of the SVG
+                path.style.pointerEvents = "none";
+            });
+
+            var texts = svgElement.querySelectorAll('text');
+
+            texts.forEach(function (text) {
+                svgElement.appendChild(text); // Move each text element to the end of the SVG
+                text.style.pointerEvents = "none";
+            });
         }
     } catch (error) {
         console.error('Error fetching coordinates:', error);
@@ -106,11 +119,12 @@ function hideTooltip() {
 function addCircleToSVG(parent, svgElement, x, y, hoverText) {
     const svgns = 'http://www.w3.org/2000/svg';
 
+
     // Create circle element
     const newCircle = document.createElementNS(svgns, 'circle');
     newCircle.setAttribute('cx', x);
     newCircle.setAttribute('cy', y);
-    newCircle.setAttribute('r', '3'); // Adjust radius as needed
+    newCircle.setAttribute('r', '8'); // Adjust radius as needed
     newCircle.setAttribute('fill', 'red');
     newCircle.setAttribute('fill-opacity', '0.5'); // 50% transparency
 

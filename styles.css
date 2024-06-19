@@ -1,0 +1,52 @@
+body {
+    background-color: #4f5d64;
+}
+
+svg {
+    display: block;
+    /* Ensure SVG fills its container */
+    border: 1px solid black;
+    /* Add a border for better visibility */
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.region:hover {
+    fill-opacity: 50%;
+    fill: rgb(170, 0, 255);
+    fill-opacity: 10%;
+}
+
+
+#svg-container {
+    width: 50%;
+    /* Adjust as needed */
+    /*height: 50%;*/
+    /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align items to the top */
+}
+
+#container {
+    display: flex;
+    width: 100%;
+}
+
+#text-panel {
+    width: 50%;
+    /* Adjust as needed */
+    padding: 10px;
+    /* Optional: Add padding for better appearance */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect the width */
+}
+
+#tooltip {
+    background: cornsilk;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
