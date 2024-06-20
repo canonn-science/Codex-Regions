@@ -1,26 +1,38 @@
 let codexData = {};
+let selectedRecord = null; // Global variable to store the selected record
 
 async function fetchData() {
-    const response = await fetch('https://us-central1-canonn-api-236217.cloudfunctions.net/query/codex/ref');
-    codexData = await response.json();
-    checkURLParameters();
+    try {
+        const response = await fetch('https://us-central1-canonn-api-236217.cloudfunctions.net/query/codex/ref');
+        codexData = await response.json();
+        console.log('Fetched Data:', codexData); // Debugging: Log fetched data
+        checkURLParameters();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
 }
 
 function searchCodex() {
-    const query = document.getElementById('search-box').value.toLowerCase();
+    const query = document.getElementById('search-box').value.toLowerCase().trim(); // Trim whitespace
+    console.log('Search Query:', query); // Debugging: Log search query
+    if (query === '') {
+        clearResults();
+        return;
+    }
     const results = Object.values(codexData)
         .filter(item => item.english_name.toLowerCase().includes(query))
         .sort((a, b) => a.english_name.localeCompare(b.english_name))
         .slice(0, 10);
 
+    console.log('Search Results:', results); // Debugging: Log search results
     displayResults(results);
 }
 
 function displayResults(results) {
-    const resultsDiv = document.getElementById('results-container');
-    resultsDiv.innerHTML = '';
+    const resultsContainer = document.getElementById('results-container');
+    resultsContainer.innerHTML = '';
     if (results.length === 0) {
-        resultsDiv.style.display = 'none';
+        resultsContainer.innerHTML = '<p>No results found.</p>';
         return;
     }
     results.forEach(item => {
@@ -28,15 +40,26 @@ function displayResults(results) {
         div.classList.add('result-item');
         div.textContent = item.english_name;
         div.onclick = () => selectItem(item);
-        resultsDiv.appendChild(div);
+        resultsContainer.appendChild(div);
     });
-    resultsDiv.style.display = 'block';
+    resultsContainer.classList.add('active'); // Add 'active' class to display results
+    hideSelectedRecord(); // Hide selected record when results are displayed
+}
+
+function clearResults() {
+    const resultsContainer = document.getElementById('results-container');
+    resultsContainer.innerHTML = '';
+    resultsContainer.classList.remove('active'); // Remove 'active' class to hide results
+    showSelectedRecord(); // Show selected record when results are cleared
 }
 
 function selectItem(item) {
     document.getElementById('search-box').value = item.english_name;
-    displaySelectedRecord(item);
-    document.getElementById('results-container').style.display = 'none';
+
+    selectedRecord = item; // Store selected item in global variable
+    logSelectedRecord(); // Log selected record
+    hideResults(); // Hide results after selecting an item
+    dispatchSelectedRecordEvent(); // Dispatch custom event
 }
 
 function displaySelectedRecord(item) {
@@ -55,6 +78,19 @@ function displaySelectedRecord(item) {
     recordDiv.style.display = 'block';
 }
 
+function hideSelectedRecord() {
+    document.getElementById('selected-record').style.display = 'none';
+}
+
+function showSelectedRecord() {
+    document.getElementById('selected-record').style.display = 'block';
+}
+
+function hideResults() {
+    const resultsContainer = document.getElementById('results-container');
+    resultsContainer.classList.remove('active'); // Remove 'active' class to hide results
+}
+
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -68,7 +104,11 @@ function checkURLParameters() {
     if (entryid && hud_category) {
         const selectedItem = Object.values(codexData).find(item => item.entryid == entryid && item.hud_category === hud_category);
         if (selectedItem) {
+            displaySelectedRecord(selectedItem);
             selectItem(selectedItem);
+            selectedRecord = selectedItem; // Store selected item in global variable
+            logSelectedRecord(); // Log selected record 
+            dispatchSelectedRecordEvent(); // Dispatch custom event
         }
     }
 }
@@ -83,4 +123,20 @@ function submitSearch() {
     }
 }
 
-window.onload = fetchData;
+// Example function that uses the selectedRecord
+function logSelectedRecord() {
+    if (selectedRecord) {
+        console.log('Selected Record:', selectedRecord);
+    } else {
+        console.log('No record selected');
+    }
+}
+
+// Dispatch custom event when selectedRecord is updated
+function dispatchSelectedRecordEvent() {
+    const event = new CustomEvent('recordSelected', { detail: selectedRecord });
+    document.dispatchEvent(event);
+}
+
+// Ensure fetchData is called after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', fetchData);

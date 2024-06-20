@@ -1,4 +1,7 @@
 body {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400;
     background-color: #4f5d64;
 }
 
@@ -145,4 +148,90 @@ svg {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
+}
+
+
+a {
+    color: white;
+    /* Default link color */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    /* Normal font weight */
+}
+
+/* Hover style */
+a:hover {
+    color: white;
+    /* Change text color to white on hover */
+    text-decoration: underline;
+    /* Underline on hover */
+    font-weight: bold;
+    /* Bold text on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+tr:nth-child(even) {
+    background-color: #6e6e6e;
+}
+
+th {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    color: #ef7b04;
+    background-color: #263238;
+    /* color: rgb(203, 195, 195); */
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+.page-link:hover {
+    background-color: #0056b3;
+}
+
+.page-item.disabled .page-link {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
