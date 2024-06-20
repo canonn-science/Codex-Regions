@@ -2,6 +2,72 @@ body {
     background-color: #4f5d64;
 }
 
+#search-container {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#search-box {
+    position: relative;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#submit-button {
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.result-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+#results-container {
+    position: absolute;
+    top: calc(100% + 5px);
+    /* Position right below the search box */
+    left: 0;
+    display: none;
+    width: 100%;
+    /* Match the width of the search box */
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    /* max-height: 200px; */
+    /* overflow-y: auto; */
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+}
+
+#results-container.active {
+    display: block;
+    /* Display it when it has the 'active' class */
+}
+
+#selected-record {
+    margin-top: 20px;
+    /* Adjust as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: white;
+    z-index: 0;
+    /* Ensure it appears below the results container */
+}
+
+
 
 header {
     background-color: #263238;

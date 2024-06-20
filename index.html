@@ -13,8 +13,18 @@
         <div class="header-content">
             <img src="LogoFavicon-512-transparent.png" alt="Canonn Research Logo" class="logo">
             <h1 class="title">Canonn Research</h1>
+
+            <div id="search-container">
+                <input type="text" id="search-box" placeholder="Start typing to search..." oninput="searchCodex()" />
+                <div id="results-container"></div>
+                <button id="submit-button" onclick="submitSearch()">Submit</button>
+
+            </div>
+
         </div>
+
     </header>
+
 
     <div id="tooltip" style="position: absolute; display: none;"></div>
 
@@ -23,6 +33,9 @@
         <div id="text-panel">
             <p>We could have and image and some statistics on this panel</p>
             <!-- More text or elements can go here -->
+
+            <div id="selected-record"></div>
+            <script src="search.js"></script>
         </div>
     </div>
 

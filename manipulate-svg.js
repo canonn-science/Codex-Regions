@@ -23,7 +23,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
     params = new URLSearchParams(url.search);
     // Get the value of the 'entryid' parameter
     entryid = params.get('entryid');
-    category = params.get('category');
+    category = params.get('hud_category') || params.get('category');
 
     console.log(url);
     console.log(params);
