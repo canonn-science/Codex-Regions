@@ -235,3 +235,7 @@ th {
     background-color: #cccccc;
     cursor: not-allowed;
 }
+
+.nowrap-cell {
+    white-space: nowrap;
+}

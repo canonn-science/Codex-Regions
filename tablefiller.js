@@ -37,7 +37,7 @@ document.addEventListener('recordSelected', function (event) {
             row.innerHTML = `
                 <!--td>${(currentPage - 1) * rowsPerPage + index + 1}</td-->
                 <td>${system.id}</td>
-                <td><a href="https://signals.canonn.tech?system=${system.systemName}">${system.systemName}</a> ${system.body}</td>
+                <td class="nowrap-cell"><a href="https://signals.canonn.tech?system=${system.systemName}">${system.systemName}</a> ${system.body}</td>
                 <td>${system.star_class}</td>
                 <td>${system.star_types}</td>
                 <td>${system.bodyType}</td>
