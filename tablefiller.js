@@ -4,7 +4,7 @@ document.addEventListener('recordSelected', function (event) {
     console.log('Event Received: Selected Record:', selectedRecord);
     const apiUrl = 'https://us-central1-canonn-api-236217.cloudfunctions.net/query/codex/bodies'; // API endpoint
     let currentPage = 1;
-    const rowsPerPage = 20;
+    const rowsPerPage = 10;
     let lastPage = false;
 
     function fetchData(page) {
@@ -34,9 +34,16 @@ document.addEventListener('recordSelected', function (event) {
 
 
             const row = document.createElement('tr');
+
+            checkmark = '<span class="red-cross">&#10006;</span>'
+            if (system.complete = 'Y') {
+                checkmark = '<span class="green-tick">&#10004;</span>'
+            }
+
             row.innerHTML = `
                 <!--td>${(currentPage - 1) * rowsPerPage + index + 1}</td-->
                 <td>${system.id}</td>
+                <td>${checkmark}</td>   
                 <td class="nowrap-cell"><a href="https://signals.canonn.tech?system=${system.systemName}">${system.systemName}</a> ${system.body}</td>
                 <td>${system.star_class}</td>
                 <td>${system.star_types}</td>

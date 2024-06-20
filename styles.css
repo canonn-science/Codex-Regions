@@ -239,3 +239,13 @@ th {
 .nowrap-cell {
     white-space: nowrap;
 }
+
+.green-tick {
+    color: green;
+    font-size: 24px;
+}
+
+.red-cross {
+    color: red;
+    font-size: 24px;
+}
