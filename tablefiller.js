@@ -56,6 +56,8 @@ document.addEventListener('recordSelected', function (event) {
                 <td>${system.temperature}</td>
                 <td>${system.gravity}</td>
                 <td>${system.materials}</td>
+                <td>${system.cmdr}</td>
+                <td>${system.reported_at}</td>
             `;
             tableBody.appendChild(row);
         });
