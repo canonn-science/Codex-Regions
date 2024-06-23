@@ -126,8 +126,18 @@ svg {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border: 1px solid #ddd;
+    /* Set the border */
+    border-radius: 2%;
+    /* Set the rounded corners */
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+    display: inline-block;
+    /* Align the container */
     /* Align items to the top */
 }
+
+
 
 #container {
     display: flex;
@@ -280,4 +290,16 @@ th {
 
 #materialsContainer {
     display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.inactive {
+    background-color: #ddd;
+}
+
+.active {
+    background-color: orange;
 }

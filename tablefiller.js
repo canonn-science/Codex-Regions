@@ -1,14 +1,16 @@
 
+let MatsToggle = "hidden"
 
 function toggleMaterials() {
+    const matBtn = document.querySelector('#materialsButton');
     const columns = document.querySelectorAll('.materials');
     columns.forEach(column => {
         if (column.classList.contains('hidden')) {
-            console.log('Column is hidden');
+            MatsToggle = "visible"
             column.classList.remove('hidden');
         } else {
+            MatsToggle = "hidden"
             column.classList.add('hidden');
-            console.log('Column is visible');
         }
     });
 }
@@ -87,6 +89,7 @@ document.addEventListener('recordSelected', function (event) {
             const ZirconiumMaterial = system.materials?.["Zirconium"] ?? 0;
 
 
+
             row.innerHTML = `
                 <!--td>${(currentPage - 1) * rowsPerPage + index + 1}</td-->
                 <td>${system.id}</td>
@@ -103,34 +106,34 @@ document.addEventListener('recordSelected', function (event) {
                 <td>${system.temperature}</td>
                 <td>${system.gravity}</td>
                 
-                <td class="materials hidden">${AntimonyMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${PoloniumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${RutheniumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${SeleniumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${TechnetiumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${TelluriumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${AntimonyMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${PoloniumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${RutheniumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${SeleniumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${TechnetiumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${TelluriumMaterial.toFixed(2)}%</td>
 
 
-                <td class="materials hidden">${CadmiunMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${MercuryMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${MolybdenumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${NiobiumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${TinMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${VanadiumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${CadmiunMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${MercuryMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${MolybdenumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${NiobiumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${TinMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${VanadiumMaterial.toFixed(2)}%</td>
 
-                <td class="materials hidden">${ArsenicMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${ChromiumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${GermaniumMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${ManganeseMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${PhospherousMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${TungstenMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${ZincMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${ZirconiumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${ArsenicMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${ChromiumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${GermaniumMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${ManganeseMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${PhospherousMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${TungstenMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${ZincMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${ZirconiumMaterial.toFixed(2)}%</td>
 
-                <td class="materials hidden">${CarbonMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${IronMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${NickelMaterial.toFixed(2)}%</td>
-                <td class="materials hidden">${SulpherMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${CarbonMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${IronMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${NickelMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${SulpherMaterial.toFixed(2)}%</td>
                 
                 
                 
