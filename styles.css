@@ -249,3 +249,35 @@ th {
     color: red;
     font-size: 24px;
 }
+
+.mat1 {
+    text-align: right;
+    /* Align text to the left */
+    background-color: #ee5f5b;
+    color: black;
+}
+
+.mat2 {
+    text-align: right;
+    /* Align text to the left */
+    background-color: orange;
+    color: black;
+}
+
+.mat3 {
+    text-align: right;
+    /* Align text to the left */
+    background-color: #62c462;
+    color: black;
+}
+
+.mat4 {
+    text-align: right;
+    /* Align text to the left */
+    background-color: #5bc0de;
+    color: black;
+}
+
+#materialsContainer {
+    display: none;
+}
