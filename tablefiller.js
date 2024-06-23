@@ -49,7 +49,7 @@ document.addEventListener('recordSelected', function (event) {
             const row = document.createElement('tr');
 
             checkmark = '<span class="red-cross">&#10006;</span>'
-            if (system.complete = 'Y') {
+            if (system.complete == 'Y') {
                 checkmark = '<span class="green-tick">&#10004;</span>'
             }
 
