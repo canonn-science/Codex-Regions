@@ -101,6 +101,10 @@ document.addEventListener('recordSelected', function (event) {
                 <td>${JSON.stringify(system.atmosphereComposition)}</td>
                 <td>${system.volcanismType}</td>
                 <td>${system.distanceToArrival}</td>
+
+                <td>${system.nearest_nebula}</td>
+                <td>${system.nearest_nebula_type}</td>
+
                 <td>${system.orbitalEccentricity}</td>
                 <td>${system.temperature}</td>
                 <td>${system.gravity}</td>
