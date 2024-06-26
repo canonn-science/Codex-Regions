@@ -103,7 +103,7 @@ document.addEventListener('recordSelected', function (event) {
                 <td>${system.distanceToArrival}</td>
                 <td>${system.orbitalEccentricity}</td>
                 <td>${system.temperature}</td>
-                <td>${system.gravity}</td>
+                <td>${system.gravity?.toFixed(2) ?? "?.??"}g</td>
                 
                 <td class="materials ${MatsToggle}">${AntimonyMaterial.toFixed(2)}%</td>
                 <td class="materials ${MatsToggle}">${PoloniumMaterial.toFixed(2)}%</td>
