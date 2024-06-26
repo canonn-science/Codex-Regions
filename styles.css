@@ -309,6 +309,7 @@ th {
     max-width: 1000px;
     /* Limiting the maximum width */
     /*margin: auto;*/
+    border: 1px solid #ddd;
     border-radius: 15px;
     overflow: hidden;
     text-align: center;
@@ -317,7 +318,7 @@ th {
 
 .image-panel img {
     width: 100%;
-    border: 1px solid #ddd;
+
     border-radius: 15px 15px 0 0;
 }
 
