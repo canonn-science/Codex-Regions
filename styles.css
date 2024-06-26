@@ -60,7 +60,7 @@ body {
 }
 
 #selected-record {
-    margin-top: 20px;
+    /* margin-top: 10px; */
     /* Adjust as needed */
     /*padding: 10px;
     border: 1px solid #ccc;
@@ -128,11 +128,12 @@ svg {
     align-items: flex-start;
     border: 1px solid #ddd;
     /* Set the border */
-    border-radius: 2%;
+    border-radius: 15px;
     /* Set the rounded corners */
     overflow: hidden;
     /* Ensure content doesn't overflow */
     display: inline-block;
+
     /* Align the container */
     /* Align items to the top */
 }
@@ -306,7 +307,9 @@ th {
 
 .image-panel {
     width: 100%;
+    margin-top: -10px;
     max-width: 1000px;
+    align-items: flex-start;
     /* Limiting the maximum width */
     /*margin: auto;*/
     border: 1px solid #ddd;

@@ -77,8 +77,8 @@ function displaySelectedRecord(item) {
     }
 
     recordDiv.innerHTML = `
-    <h3>${item.english_name}</h3>
     ${image_panel}
+    <h3>${item.english_name}</h3>
     <p><strong>Category:</strong> ${item.category}</p>
     <p><strong>Sub Category:</strong> ${item.sub_category}</p>
     <p><strong>Sub Class:</strong> ${item.sub_class}</p>
