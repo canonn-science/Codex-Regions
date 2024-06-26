@@ -96,7 +96,7 @@ document.addEventListener('recordSelected', function (event) {
                 <td class="nowrap-cell"><a href="https://signals.canonn.tech?system=${system.system_name}">${system.system_name}</a> ${system.body}</td>
                 <td>${system.star_class}</td>
                 <td>${system.star_types}</td>
-                <td>${system.bodyType}</td>
+                <td>${system.body_type}</td>
                 <td>${system.atmosphereType}</td>
                 <td>${JSON.stringify(system.atmosphereComposition)}</td>
                 <td>${system.volcanismType}</td>
