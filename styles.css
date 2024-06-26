@@ -326,8 +326,12 @@ th {
 }
 
 .caption {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400;
+    color: #ef7b04;
     padding: 10px;
-    background-color: #f8f8f8;
+    background-color: #263238;
     border-radius: 0 0 15px 15px;
     display: flex;
     justify-content: center;
