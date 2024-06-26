@@ -64,9 +64,21 @@ function selectItem(item) {
 
 function displaySelectedRecord(item) {
     const recordDiv = document.getElementById('selected-record');
+
+
+    image_panel = `
+    <div class="image-panel">
+    <img src="${item.image_url}" alt="${item.english_name} by CMDR ${item.image_cmdr}">
+    <div class="caption">${item.english_name} by CMDR ${item.image_cmdr}</div>
+    </div>
+    `
+    if (item.image_url == null) {
+        image_panel = ""
+    }
+
     recordDiv.innerHTML = `
     <h3>${item.english_name}</h3>
-    <img src="${item.image_url}" alt="${item.english_name} by CMDR ${item.image_cmdr}"/>
+    ${image_panel}
     <p><strong>Category:</strong> ${item.category}</p>
     <p><strong>Sub Category:</strong> ${item.sub_category}</p>
     <p><strong>Sub Class:</strong> ${item.sub_class}</p>

@@ -62,10 +62,10 @@ body {
 #selected-record {
     margin-top: 20px;
     /* Adjust as needed */
-    padding: 10px;
+    /*padding: 10px;
     border: 1px solid #ccc;
     display: block;
-    background-color: white;
+    background-color: rgb(90, 90, 90);*/
     z-index: 0;
     /* Ensure it appears below the results container */
 }
@@ -302,4 +302,32 @@ th {
 
 .active {
     background-color: orange;
+}
+
+.image-panel {
+    width: 100%;
+    max-width: 1000px;
+    /* Limiting the maximum width */
+    /*margin: auto;*/
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-panel img {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 15px 15px 0 0;
+}
+
+.caption {
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    /* Adjust the height as needed */
 }
