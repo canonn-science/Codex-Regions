@@ -66,6 +66,7 @@ function displaySelectedRecord(item) {
     const recordDiv = document.getElementById('selected-record');
     recordDiv.innerHTML = `
     <h3>${item.english_name}</h3>
+    <img src="${item.image_url}" alt="${item.english_name} by CMDR ${item.image_cmdr}"/>
     <p><strong>Category:</strong> ${item.category}</p>
     <p><strong>Sub Category:</strong> ${item.sub_category}</p>
     <p><strong>Sub Class:</strong> ${item.sub_class}</p>
