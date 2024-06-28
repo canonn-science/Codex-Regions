@@ -108,15 +108,22 @@ function displaySelectedRecord(item) {
     image_panel = `
     <div class="image-panel">
     <img src="${item.image_url}" alt="${item.english_name} by CMDR ${item.image_cmdr}">
-    <div class="caption">${item.english_name} by CMDR ${item.image_cmdr}</div>
+    <div class="caption">${item.english_name} by CMDR ${item.image_cmdr}
+    &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>
+    </div>
+    
     </div>
     `
     if (item.image_url == null) {
         image_panel = `
         <div class="image-panel">
         <img src="images/vistagenomics.png" alt="Send us your samples">
-        <div class="caption">Please send your samples to&nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSdtS-78k6MDb_L2RodLnVGoB3r2958SA5ARnufAEZxLeoRbhA/viewform?usp=pp_url&entry.1282362439=${item.english_name}&entry.468337930=${item.entryid}">Vista Genomics</a></div>
+        <div class="caption">Please send your samples to&nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSdtS-78k6MDb_L2RodLnVGoB3r2958SA5ARnufAEZxLeoRbhA/viewform?usp=pp_url&entry.1282362439=${item.english_name}&entry.468337930=${item.entryid}">Vista Genomics</a>
+        &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>
         </div>
+        
+        </div>
+        
     `    }
 
     recordDiv.innerHTML = `
@@ -196,3 +203,32 @@ function dispatchSelectedRecordEvent() {
 
 // Ensure fetchData is called after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', fetchData);
+
+
+
+function fetchMissing() {
+    const englishNames = [];
+
+    // Populate the array with value.english_name
+    for (const key in codexData) {
+        if (codexData.hasOwnProperty(key)) {
+            englishNames.push(codexData[key].english_name);
+        }
+    }
+
+    // Create the content of the text file
+    const content = englishNames.join('\n');
+
+    // Create a blob with the content
+    const blob = new Blob([content], { type: 'text/plain' });
+
+    // Create an anchor element and trigger the download
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'missing_images.txt';
+    document.body.appendChild(a);
+    a.click();
+
+    // Clean up
+    document.body.removeChild(a);
+};
