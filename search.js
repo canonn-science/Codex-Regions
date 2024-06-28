@@ -114,7 +114,7 @@ function displaySelectedRecord(item) {
     if (item.image_url == null) {
         image_panel = `
         <div class="image-panel">
-        <img src="/images/vistagenomics.png" alt="Send us your samples">
+        <img src="images/vistagenomics.png" alt="Send us your samples">
         <div class="caption">Please send your genertic samples to&nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSdtS-78k6MDb_L2RodLnVGoB3r2958SA5ARnufAEZxLeoRbhA/viewform?usp=pp_url&entry.1282362439=${item.english_name}&entry.468337930=${item.entryid}">Vista Genomics</a></div>
         </div>
     `    }
