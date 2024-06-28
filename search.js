@@ -1,15 +1,54 @@
 let codexData = {};
+let codexKeys = []
 let selectedRecord = null; // Global variable to store the selected record
+
 
 async function fetchData() {
     try {
         const response = await fetch('https://us-central1-canonn-api-236217.cloudfunctions.net/query/codex/ref');
         codexData = await response.json();
         console.log('Fetched Data:', codexData); // Debugging: Log fetched data
+
         checkURLParameters();
     } catch (error) {
         console.error('Error fetching data:', error);
     }
+}
+
+function getNextValue() {
+    qp = getQueryParams()
+
+    const keys = Object.keys(codexData);
+    currentKey = qp.entryid || "2100301";
+    console.log(currentKey);
+    const currentIndex = keys.indexOf(currentKey);
+    if (currentIndex === -1) {
+        throw new Error("Invalid key");
+    }
+    const nextIndex = (currentIndex + 1) % keys.length;
+    const nextKey = keys[nextIndex];
+    console.log(codexData[nextKey])
+
+    k = codexData[nextKey];
+
+    window.location.href = `?entryid=${k.entryid}&hud_category=${k.hud_category}`;
+
+}
+
+function getPrevValue(y) {
+    qp = getQueryParams()
+
+    currentKey = qp.entryid || "2100301";
+    const keys = Object.keys(codexData);
+    const currentIndex = keys.indexOf(currentKey);
+    if (currentIndex === -1) {
+        throw new Error("Invalid key");
+    }
+    const prevIndex = (currentIndex - 1 + keys.length) % keys.length;
+    const prevKey = keys[prevIndex];
+    k = codexData[prevKey];
+
+    window.location.href = `?entryid=${k.entryid}&hud_category=${k.hud_category}`;
 }
 
 function searchCodex() {
