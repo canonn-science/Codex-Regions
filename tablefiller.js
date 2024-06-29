@@ -92,7 +92,7 @@ document.addEventListener('recordSelected', function (event) {
 
             row.innerHTML = `
                 <!--td>${(currentPage - 1) * rowsPerPage + index + 1}</td-->
-                <td>${checkmark}</td>   
+                <td><a class="no-underline" title="click here to report an issue" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfO5hZAOp2gUJGRF84YQmwHBbd_OKN5o_pnsD6vB5JfLpgKow/viewform?usp=pp_url&entry.1105671098=${system.english_name}&entry.1456144812=${system.entryid}&entry.856887466=${system.system_name}&entry.649737753=${system.system_address}&entry.1480250981=${system.body}&entry.34397199=${system.body_id}">${checkmark}</a></td>   
                 <td class="nowrap-cell"><a href="https://signals.canonn.tech?system=${system.system_name}">${system.system_name}</a> ${system.body}</td>
                 <td>${system.star_class}</td>
                 <td>${system.star_types}</td>

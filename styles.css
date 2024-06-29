@@ -187,6 +187,15 @@ a:hover {
     /* Bold text on hover */
 }
 
+a.no-underline:hover {
+    text-decoration: none;
+    /* Override underline on hover */
+    color: white;
+    /* Keep the color change on hover */
+    font-weight: bold;
+    /* Keep the bold text on hover */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
