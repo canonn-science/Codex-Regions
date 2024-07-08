@@ -212,7 +212,9 @@ function fetchMissing() {
     // Populate the array with value.english_name
     for (const key in codexData) {
         if (codexData.hasOwnProperty(key)) {
-            englishNames.push(codexData[key].english_name);
+            if (codexData[key].image_url == null) {
+                englishNames.push(codexData[key].english_name);
+            }
         }
     }
 
