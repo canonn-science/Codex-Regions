@@ -130,6 +130,7 @@ function displaySelectedRecord(item) {
     ${image_panel}
     <h3>${item.english_name}</h3>
     <p><strong>Category:</strong> ${item.category}</p>
+    <p><strong>Name:</strong> ${item.name}</p>
     <p><strong>Sub Category:</strong> ${item.sub_category}</p>
     <p><strong>Sub Class:</strong> ${item.sub_class}</p>
     <p><strong>Entry ID:</strong> ${item.entryid}</p>

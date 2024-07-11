@@ -7,8 +7,8 @@ With the map loaded into memory, it then downloads a csv file of coordinates fro
 
 Examples:
 
-* [Stratum Tectonicas - Green Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2420703&category=Biology)
-* [Tubus Conifer - Turquoise Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2430108&category=Biology)
+* [Stratum Tectonicas - Green Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2420703&hud_category=Biology)
+* [Tubus Conifer - Turquoise Regions](https://canonn-science.github.io/Codex-Regions/?entryid=2430108&hud_category=Biology)
  
 
 # Credits
