@@ -55,6 +55,15 @@ document.addEventListener('recordSelected', function (event) {
                 checkmark = '<span class="green-tick">&#10004;</span>'
             }
 
+
+            if (system.star_type_match == 'Y') {
+                starmatch = '<span class="green-tick">&#10004;</span>'
+            } else if (system.star_type_match == 'N') {
+                starmatch = '<span class="red-cross">&#10006;</span>'
+            } else {
+                starmatch = '-'
+            }
+
             //if (system.atmosphereComposition == null) {
             //    system.atmosphereComposition = {}
             //}
@@ -96,6 +105,8 @@ document.addEventListener('recordSelected', function (event) {
                 <td class="nowrap-cell"><a href="https://signals.canonn.tech?system=${system.system_name}">${system.system_name}</a> ${system.body}</td>
                 <td>${system.star_class}</td>
                 <td>${system.star_types}</td>
+                <td>${system.illuminating_subtype}</td>
+                <td>${starmatch}</td>
                 <td>${system.body_type}</td>
                 <td>${system.atmosphereType}</td>
                 <td>${JSON.stringify(system.atmosphereComposition)}</td>
