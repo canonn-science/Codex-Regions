@@ -56,9 +56,9 @@ document.addEventListener('recordSelected', function (event) {
             }
 
 
-            if (system.star_type_match == 'Y') {
+            if (system.codex_star_match == 1) {
                 starmatch = '<span class="green-tick">&#10004;</span>'
-            } else if (system.star_type_match == 'N') {
+            } else if (system.codex_star_match == 0) {
                 starmatch = '<span class="red-cross">&#10006;</span>'
             } else {
                 starmatch = '-'
