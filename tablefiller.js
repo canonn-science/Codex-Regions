@@ -88,7 +88,7 @@ document.addEventListener('recordSelected', function (event) {
             const PoloniumMaterial = system.materials?.["Polonium"] ?? 0;
             const RutheniumMaterial = system.materials?.["Ruthenium"] ?? 0;
             const SeleniumMaterial = system.materials?.["Selenium"] ?? 0;
-            const SulpherMaterial = system.materials?.["Sulpher"] ?? 0;
+            const SulphurMaterial = system.materials?.["Sulphur"] ?? 0;
             const TechnetiumMaterial = system.materials?.["Technetium"] ?? 0;
             const TelluriumMaterial = system.materials?.["Tellurium"] ?? 0;
             const TinMaterial = system.materials?.["Tin"] ?? 0;
@@ -147,7 +147,7 @@ document.addEventListener('recordSelected', function (event) {
                 <td class="materials ${MatsToggle}">${CarbonMaterial.toFixed(2)}%</td>
                 <td class="materials ${MatsToggle}">${IronMaterial.toFixed(2)}%</td>
                 <td class="materials ${MatsToggle}">${NickelMaterial.toFixed(2)}%</td>
-                <td class="materials ${MatsToggle}">${SulpherMaterial.toFixed(2)}%</td>
+                <td class="materials ${MatsToggle}">${SulphurMaterial.toFixed(2)}%</td>
                 
                 
                 
