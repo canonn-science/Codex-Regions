@@ -61,7 +61,7 @@ function searchCodex() {
     const results = Object.values(codexData)
         .filter(item => item.english_name.toLowerCase().includes(query))
         .sort((a, b) => a.english_name.localeCompare(b.english_name))
-        .slice(0, 10);
+        .slice(0, 15);
 
     console.log('Search Results:', results); // Debugging: Log search results
     displayResults(results);
