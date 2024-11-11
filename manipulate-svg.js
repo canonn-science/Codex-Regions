@@ -128,6 +128,15 @@ function addCircleToSVG(parent, svgElement, x, y, hoverText) {
     newCircle.setAttribute('fill', 'red');
     newCircle.setAttribute('fill-opacity', '0.5'); // 50% transparency
 
+    // Add click event listener to copy the title to the clipboard
+    newCircle.addEventListener('click', () => {
+        navigator.clipboard.writeText(hoverText).then(() => {
+            console.log(`Copied to clipboard: ${systemName}`);
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    });
+
     // Append circle element to SVG
     svgElement.appendChild(newCircle);
 
