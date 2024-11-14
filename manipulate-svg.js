@@ -75,7 +75,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                             ty = ((y + 24105) * 83 / 4096)
 
 
-                            addCircleToSVG(svgElement, circleGroup, tx, 2048 - ty, title, entryid, catagory);
+                            addCircleToSVG(svgElement, circleGroup, tx, 2048 - ty, title, entryid);
                         }
                     }
                     index++;
@@ -116,7 +116,7 @@ function hideTooltip() {
 }
 
 
-function addCircleToSVG(parent, svgElement, x, y, hoverText, entryid, category) {
+function addCircleToSVG(parent, svgElement, x, y, hoverText, entryid) {
     const svgns = 'http://www.w3.org/2000/svg';
 
 
