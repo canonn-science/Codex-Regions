@@ -75,7 +75,7 @@ async function fetchCoordinatesAndAddCircles(svgContainer) {
                             ty = ((y + 24105) * 83 / 4096)
 
 
-                            addCircleToSVG(svgElement, circleGroup, tx, 2048 - ty, title);
+                            addCircleToSVG(svgElement, circleGroup, tx, 2048 - ty, title, entryid, catagory);
                         }
                     }
                     index++;
@@ -116,7 +116,7 @@ function hideTooltip() {
 }
 
 
-function addCircleToSVG(parent, svgElement, x, y, hoverText) {
+function addCircleToSVG(parent, svgElement, x, y, hoverText, entryid, category) {
     const svgns = 'http://www.w3.org/2000/svg';
 
 
@@ -135,6 +135,16 @@ function addCircleToSVG(parent, svgElement, x, y, hoverText) {
         }).catch(err => {
             console.error('Could not copy text: ', err);
         });
+    });
+
+    newCircle.addEventListener('contextmenu', (event) => {
+        // Prevent the default context menu from appearing
+        event.preventDefault();
+
+        // Handle the right-click event
+        window.open(`https://bioforge.canonn.tech/?entryid=${entryid}`, '_blank');
+
+        // You can perform other actions here, like showing a custom context menu
     });
 
     // Append circle element to SVG
