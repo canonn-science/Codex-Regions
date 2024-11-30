@@ -109,7 +109,7 @@ function displaySelectedRecord(item) {
     <div class="image-panel">
     <img src="${item.image_url}" alt="${item.english_name} by CMDR ${item.image_cmdr}">
     <div class="caption">${item.english_name} by CMDR ${item.image_cmdr}
-    &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>
+    &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>&nbsp;<p><a href="https://canonn-science.github.io/undiscovered-codex/?cmdr=MISSING%20IMAGES">See on a Map<a></p>
     </div>
     
     </div>
@@ -119,7 +119,7 @@ function displaySelectedRecord(item) {
         <div class="image-panel">
         <img src="images/vistagenomics.png" alt="Send us your samples">
         <div class="caption">Please send your samples to&nbsp;<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdtS-78k6MDb_L2RodLnVGoB3r2958SA5ARnufAEZxLeoRbhA/viewform?usp=pp_url&entry.1282362439=${item.english_name}&entry.468337930=${item.entryid}">Vista Genomics</a>
-        &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>
+        &nbsp;<p><centre><button id="downloadButton" onclick="fetchMissing()">Download Missing Images List</button></centre></p>&nbsp;<p><a href="https://canonn-science.github.io/undiscovered-codex/?cmdr=MISSING%20IMAGES">See on a Map<a></p>
         </div>
         
         </div>
