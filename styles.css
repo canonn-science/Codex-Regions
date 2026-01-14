@@ -1,3 +1,8 @@
+/* Highlight regions with dots in orange */
+.region.highlighted {
+    fill: orange !important;
+    fill-opacity: 0.5 !important;
+}
 body {
     font-family: 'Open Sans', sans-serif !important;
     font-size: 12px !important;
@@ -117,11 +122,6 @@ svg {
     /* Maintain aspect ratio */
 }
 
-.region:hover {
-    fill-opacity: 50%;
-    fill: rgb(170, 0, 255);
-    fill-opacity: 10%;
-}
 
 
 #svg-container {
